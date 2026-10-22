@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<meta property="og:title" content="VirtualCaster — Video Loop & Screen Cast">
+<meta property="og:description" content="Kenali VirtualCaster, konsep aplikasi Android untuk pemutaran video dan proyeksi layar.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<meta name="description" content="VirtualCaster membantu Anda mengelola pemutaran video MP4 dan proyeksi layar Android dengan kontrol yang praktis.">
+<title>VirtualCaster — Video Loop · Screen Cast · Android</title>
+<style>
+:root{--bg:#050b14;--panel:#0a1627;--panel2:#0d2038;--line:#1a3554;--blue:#168cff;--cyan:#19c8ff;--text:#f4f8ff;--muted:#a9bdd8;--green:#31e0b0;--light:#eef5ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,a{ -webkit-tap-highlight-color:transparent}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(5,11,20,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(100,160,220,.13)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;font-size:1.28rem;letter-spacing:-.04em}.logo{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:linear-gradient(140deg,#24c8ff,#1768ff 62%,#6a4dff);box-shadow:0 8px 26px #147dff40;font-size:23px}.brand small{display:block;font-size:.7rem;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:-3px}.brand span span{color:var(--cyan)}
+nav{display:flex;align-items:center;gap:30px;color:#c5d6ec;font-size:.9rem}nav a:hover,nav a.active{color:#48a9ff}.nav-cta,.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:14px;padding:13px 20px;font-weight:750;transition:transform .2s,filter .2s}.nav-cta,.btn.primary{background:linear-gradient(110deg,#159cff,#2361ff);color:white;box-shadow:0 9px 26px #087aff30}.btn.secondary{border:1px solid #3b8cff;color:white;background:#0a1627}.btn:hover,.nav-cta:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.hero{position:relative;overflow:hidden;padding:70px 0 64px;background:radial-gradient(ellipse at 75% 48%,#07366b70 0,transparent 40%),linear-gradient(180deg,#07111f,#07101c)}.hero:before{content:"";position:absolute;width:420px;height:420px;right:13%;top:20px;background:#007bff20;filter:blur(90px);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #0bbd9d;color:#49e7c4;padding:6px 13px;border-radius:999px;font-size:.82rem;font-weight:750;background:#052a2a70}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}h1{font-size:clamp(2.35rem,4.3vw,3.7rem);line-height:1.08;letter-spacing:-.055em;margin:20px 0}.gradient-text{background:linear-gradient(90deg,#27d0ff,#1682ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:#c2d2e8;max-width:590px;font-size:1.03rem}.actions{display:flex;flex-wrap:wrap;gap:14px;margin:27px 0 25px}.trust{display:flex;flex-wrap:wrap;gap:24px;color:#c6d6ea;font-size:.85rem}.trust span{display:flex;align-items:center;gap:8px}.trust b{color:#3199ff;font-size:1.15rem}
+.visual{min-height:420px;display:flex;align-items:center;justify-content:center;position:relative}.phone{position:relative;width:226px;height:410px;border:2px solid #6099c8;border-radius:36px;padding:10px;background:linear-gradient(140deg,#203b58,#020811 25%,#02060d);box-shadow:0 0 0 4px #020812,0 25px 65px #0009,0 0 40px #158fff26;z-index:2;transform:rotate(-2deg)}.phone:before{content:"";position:absolute;z-index:3;top:9px;left:50%;transform:translateX(-50%);width:74px;height:17px;background:#02050a;border-radius:20px}.screen{height:100%;border-radius:26px;background:#061326;overflow:hidden;padding:27px 11px 12px}.screen-top{display:flex;align-items:center;gap:7px;font-size:.72rem;font-weight:750;margin:3px 0 16px}.mini-logo{display:grid;place-items:center;width:19px;height:19px;border-radius:6px;background:linear-gradient(135deg,#29c7ff,#235cff)}.video-thumb{height:116px;border-radius:11px;background:linear-gradient(160deg,#2d8ec4,#153b65 45%,#152c38);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}.mountains{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#081b2c),linear-gradient(140deg,transparent 43%,#294e65 44% 58%,transparent 59%),linear-gradient(35deg,#102d45 35%,#4b91a3 36% 43%,#102b42 44%)}.play-icon{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#071423d9;border:1px solid #b5dfff88;font-size:18px}.file-row,.loop-row{display:flex;align-items:center;gap:8px;background:#10243a;border-radius:9px;padding:10px;margin-top:10px;font-size:.66rem}.file-icon{background:#e6f3ff;color:#0c6ee5;border-radius:5px;padding:5px}.file-row small{display:block;color:#a9bdd8;font-size:.57rem}.loop-row{justify-content:space-between}.switch{width:30px;height:16px;border-radius:99px;background:#138dff;padding:2px}.switch:after{content:"";display:block;width:12px;height:12px;border-radius:50%;background:white;margin-left:14px}.phone-button{background:linear-gradient(100deg,#4567ff,#087eff);border-radius:9px;text-align:center;font-weight:800;font-size:.7rem;padding:11px;margin-top:17px}.phone.back{position:absolute;z-index:1;right:4%;top:35px;transform:rotate(3deg) scale(.86);opacity:.94}.back .video-thumb{height:240px}.camera-ui{position:absolute;bottom:16px;left:12px;right:12px;display:flex;justify-content:space-around;align-items:center;color:white;font-size:.65rem}.record{width:31px;height:31px;border:2px solid white;border-radius:50%;background:#ff4d63;box-shadow:0 0 0 3px #ffffff36}.floating{position:absolute;z-index:4;right:-1%;top:44%;width:190px;padding:13px;background:#081526ed;border:1px solid #238bff;border-radius:17px;box-shadow:0 15px 40px #0009;transform:rotate(3deg)}.floating-title{font-size:.68rem;color:#c6d8ef;margin-bottom:9px}.float-actions{display:flex;justify-content:space-around;text-align:center;font-size:.65rem}.float-actions b{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 4px;border-radius:50%;background:#183a62;color:#d8eeff;font-size:17px}.float-actions .stop{background:#7e2436;color:#fff}.annotation{position:absolute;right:0;top:9%;font-size:.82rem;color:#71bdff;font-style:italic;max-width:145px}
+section{padding:68px 0}.section-head{text-align:center;margin-bottom:30px}.kicker{color:#1caaff;font-size:.8rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.section-head h2,.steps-title{font-size:clamp(1.8rem,3vw,2.4rem);letter-spacing:-.04em;margin:5px 0}.section-head p{color:var(--muted);max-width:650px;margin:10px auto 0}.features{background:#060e19}.feature-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.feature{padding:22px 19px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#0a1728,#07111d);min-height:205px}.feature-icon{width:47px;height:47px;display:grid;place-items:center;border-radius:12px;background:#0d3470;color:#8fd4ff;font-size:1.45rem;margin-bottom:14px}.feature h3{font-size:1rem;margin:0 0 7px;letter-spacing:-.02em}.feature p{font-size:.86rem;color:#afc3df;margin:0}
+.steps{background:var(--light);color:#0a1930}.steps .kicker{color:#087bdf}.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin-top:28px}.step{position:relative;padding-left:54px}.step-number{position:absolute;left:0;top:0;width:37px;height:37px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#1caaff,#2460f6);color:white;font-weight:850}.step-icon{font-size:1.6rem;color:#087bdf}.step h3{font-size:1rem;margin:8px 0 5px}.step p{font-size:.85rem;color:#49617f;margin:0}.steps .container>h2{font-size:2rem;margin:0}
+.note{background:#07111f;padding:50px 0}.note-box{display:flex;gap:20px;align-items:flex-start;border:1px solid #264767;background:#0b1a2c;border-radius:16px;padding:24px}.note-box .symbol{font-size:1.7rem}.note-box h3{margin:0 0 7px}.note-box p{color:var(--muted);margin:0;font-size:.92rem}
+.faq{background:#07111f}.faq-list{max-width:850px;margin:auto;display:grid;gap:10px}.faq details{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#0a1728}.faq summary{font-weight:750;cursor:pointer}.faq details p{color:var(--muted);margin-bottom:0}
+footer{border-top:1px solid #1b3047;background:#050b14;padding:25px 0;color:#9bb0ca}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font-weight:850;color:white}.footer-links{display:flex;gap:22px;font-size:.85rem}.copyright{font-size:.76rem}
+@media(max-width:1000px){nav{gap:15px}.feature-grid{grid-template-columns:repeat(3,1fr)}.hero-grid{gap:22px}.floating{right:-3%}.annotation{display:none}}
+@media(max-width:760px){.container{width:min(100% - 30px,560px)}.nav{height:66px}.brand{font-size:1.1rem}.brand small{font-size:.62rem}nav{display:none}.nav-cta{padding:10px 13px;font-size:.8rem}.hero{padding:45px 0 40px}.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero p{margin-left:auto;margin-right:auto}.actions,.trust{justify-content:center}.visual{min-height:360px;transform:scale(.88);margin:-5px -20px -25px}.phone{width:200px;height:365px}.phone.back{right:1%;top:35px}.floating{right:-2%;top:45%;width:165px}.feature-grid{grid-template-columns:1fr 1fr}.feature{padding:17px;min-height:190px}.steps-row{grid-template-columns:1fr 1fr;gap:25px 15px}.footer-row{flex-wrap:wrap}.footer-links{order:3;width:100%;justify-content:center;flex-wrap:wrap}.copyright{width:100%}section{padding:52px 0}}
+@media(max-width:420px){.feature-grid{grid-template-columns:1fr}.feature{min-height:auto}.visual{transform:scale(.78);margin:-30px -45px -45px}.actions .btn{width:100%}.steps-row{grid-template-columns:1fr}.footer-row{justify-content:center;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#beranda" aria-label="VirtualCaster beranda"><span class="logo">📹</span><span>Virtual<span>Caster</span><small>Video Loop · Screen Cast · Android</small></span></a>
+    <nav aria-label="Navigasi utama">
+      <a class="active" href="#beranda">Beranda</a><a href="#fitur">Fitur</a><a href="#cara-kerja">Cara Kerja</a><a href="#download">Download</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="nav-cta" href="#download">⇩ &nbsp; Download APK</a>
+  </div>
+</header>
+<main>
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> Aplikasi Android</span>
+      <h1>Ubah Video Anda Menjadi <span class="gradient-text">Virtual Camera / Screen Caster</span></h1>
+      <p>VirtualCaster dirancang untuk memutar video MP4 dari penyimpanan lokal, mengulang pemutaran, dan mengelola proyeksi layar melalui layanan Android.</p>
+      <div class="actions"><a class="btn primary" href="#download">⇩ &nbsp; Download APK</a><a class="btn secondary" href="#cara-kerja">▶ &nbsp; Lihat Cara Kerja</a></div>
+      <div class="trust"><span><b>◇</b> Kontrol yang jelas</span><span><b>ϟ</b> Pemutaran berulang</span><span><b>▣</b> Android modern</span></div>
+    </div>
+    <div class="visual" aria-label="Ilustrasi antarmuka VirtualCaster">
+      <div class="phone back"><div class="screen"><div class="screen-top"><span class="mini-logo">📹</span> Preview Proyeksi</div><div class="video-thumb"><div class="mountains"></div></div><div class="camera-ui"><span>Foto</span><span>Video</span><span class="record"></span><span>Mode</span></div></div></div>
+      <div class="phone"><div class="screen"><div class="screen-top"><span class="mini-logo">📹</span> VirtualCaster <span style="margin-left:auto">⚙</span></div><div class="video-thumb"><div class="mountains"></div><div class="play-icon">▶</div></div><div class="file-row"><span class="file-icon">▣</span><span>Nature_1080p.mp4<small>1920 × 1080 · MP4</small></span></div><div class="loop-row"><span>◉ &nbsp; Loop Video</span><span class="switch"></span></div><div class="phone-button">Mulai Proyeksi</div></div></div>
+      <div class="floating"><div class="floating-title">Kontrol mengambang</div><div class="float-actions"><span><b>▶</b>Play / Pause</span><span><b class="stop">■</b>Stop</span></div></div>
+      <div class="annotation">Kontrol di atas aplikasi lain ↗</div>
+    </div>
+  </div>
+</section>
+<section class="features" id="fitur">
+  <div class="container">
+    <div class="section-head"><div class="kicker">Fitur Utama</div><h2>Semua yang Anda Butuhkan</h2><p>Komponen utama untuk pengalaman pemutaran dan proyeksi yang lebih terstruktur.</p></div>
+    <div class="feature-grid">
+      <article class="feature"><div class="feature-icon">▷</div><h3>MediaProjection API</h3><p>Meminta izin screen capture dan membuat virtual display sesuai kebijakan Android.</p></article>
+      <article class="feature"><div class="feature-icon">▣</div><h3>ExoPlayer Integration</h3><p>Putar video MP4 beserta audio dan gunakan mode loop tanpa membuat player baru setiap putaran.</p></article>
+      <article class="feature"><div class="feature-icon">⚙</div><h3>Foreground Service</h3><p>Lifecycle proyeksi dikelola service dengan notifikasi persisten selama sesi aktif.</p></article>
+      <article class="feature"><div class="feature-icon">▱</div><h3>Floating UI Control</h3><p>Kontrol Play/Pause dan Stop mengambang dengan izin overlay dari pengguna.</p></article>
+      <article class="feature"><div class="feature-icon">♢</div><h3>Manajemen Resource</h3><p>Pengelolaan Surface, decoder, dan player untuk mengurangi risiko kebocoran memori.</p></article>
+    </div>
+  </div>
+</section>
+<section class="steps" id="cara-kerja">
+  <div class="container"><div class="kicker">Cara Kerja</div><h2 class="steps-title">Mulai dalam 4 Langkah</h2>
+    <div class="steps-row">
+      <article class="step"><span class="step-number">1</span><div class="step-icon">▤</div><h3>Pilih Video</h3><p>Pilih MP4 melalui pemilih file Android dan berikan akses baca yang diperlukan.</p></article>
+      <article class="step"><span class="step-number">2</span><div class="step-icon">♢</div><h3>Berikan Izin</h3><p>Setujui dialog MediaProjection sebelum sesi proyeksi dimulai.</p></article>
+      <article class="step"><span class="step-number">3</span><div class="step-icon">▷</div><h3>Mulai Proyeksi</h3><p>Player memutar video dan service mengelola sesi sesuai batasan sistem Android.</p></article>
+      <article class="step"><span class="step-number">4</span><div class="step-icon">▣</div><h3>Kontrol Pemutaran</h3><p>Gunakan kontrol aplikasi atau overlay untuk menjeda, melanjutkan, dan menghentikan sesi.</p></article>
+    </div>
+  </div>
+</section>
+<section class="note" id="download">
+  <div class="container"><div class="note-box"><div class="symbol">ⓘ</div><div><h3>APK belum dirilis</h3><p>VirtualCaster masih dalam tahap pengembangan. Tombol unduhan akan diaktifkan setelah APK benar-benar dibangun, ditandatangani, dipindai, dan diuji. Jangan unduh APK dari tautan tidak resmi.</p><div class="actions" style="margin-bottom:0"><a class="btn primary" href="#faq">Lihat Informasi Rilis</a><a class="btn secondary" href="#cara-kerja">Cara Kerja</a></div></div></div></div>
+</section>
+<section class="faq" id="faq">
+  <div class="container"><div class="section-head"><div class="kicker">FAQ</div><h2>Pertanyaan Umum</h2></div>
+    <div class="faq-list">
+      <details><summary>Apakah VirtualCaster otomatis mengganti kamera di aplikasi lain?</summary><p>Tidak. MediaProjection memproyeksikan konten layar ke virtual display; API tersebut tidak mengganti input kamera sistem atau menjamin aplikasi live streaming menerima video sebagai feed kamera.</p></details>
+      <details><summary>Apakah aplikasi bisa berjalan di latar belakang?</summary><p>Foreground Service dapat mengelola sesi yang diizinkan, tetapi notifikasi persisten tidak menjamin proses tidak pernah dihentikan. Android tetap menerapkan pembatasan lifecycle, izin, dan sumber daya.</p></details>
+      <details><summary>Apakah APK sudah bisa diunduh dari halaman ini?</summary><p>Belum. Tombol unduhan harus dihubungkan ke berkas APK yang benar-benar telah dibangun, ditandatangani, dan diuji.</p></details>
+      <details><summary>Apakah website ini responsif?</summary><p>Ya. Tata letak menyesuaikan layar desktop, tablet, dan ponsel tanpa framework eksternal.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container footer-row"><a class="brand" href="#beranda"><span class="logo">📹</span><span>Virtual<span style="color:var(--cyan)">Caster</span><small>Video Loop · Screen Cast · Android</small></span></a><div class="footer-links"><a href="#beranda">Beranda</a><a href="#fitur">Fitur</a><a href="#cara-kerja">Cara Kerja</a><a href="#download">Download</a><a href="#faq">FAQ</a></div><div class="copyright">© 2026 VirtualCaster. Situs informasi proyek.</div></div></footer>
+<script>
+document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>{document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));link.classList.add('active')}));
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "VirtualCaster",
+  "short_name": "VirtualCaster",
+  "description": "Informasi resmi proyek VirtualCaster untuk Android.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050b14",
+  "theme_color": "#07111f",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
